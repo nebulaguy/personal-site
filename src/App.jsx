@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Gradient } from "./assets/Gradient.js";
+import { Analytics } from "@vercel/analytics/react";
 import "./assets/gradient.css";
 
 const DEFAULT_COLORS = {
@@ -247,6 +248,7 @@ function App() {
           Reset Colors
         </button>
       </div>
+      <Analytics />
     </section>
   );
 }
