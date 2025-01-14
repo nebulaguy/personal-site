@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Gradient } from "./assets/Gradient.js";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./assets/gradient.css";
 
 const DEFAULT_COLORS = {
@@ -249,6 +250,7 @@ function App() {
         </button>
       </div>
       <Analytics />
+      <SpeedInsights />
     </section>
   );
 }

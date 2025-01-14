@@ -75,7 +75,7 @@
   --container-medium-width: 1080px; /* Define this value based on your design */
   --section-gap: 0;
   --gradient-padding: 0;
-  --gradient-title-margin: 13.2%;
+  --gradient-title-margin: 11.2%;
   --section-skew-Y: -12deg;
   --section-angle-sin: 0.212;
   --transform-origin-x: calc(var(--section-gap) * 0.8);
