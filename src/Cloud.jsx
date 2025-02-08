@@ -40,7 +40,7 @@ function Cloud({ x, y }) {
       ref={canvasRef}
       width={200}
       height={200}
-      style={{ position: "absolute", top: y, left: x, zIndex: -99 }}
+      style={{ position: "absolute", top: y, left: x, zIndex: 3 }}
     />
   );
 }
