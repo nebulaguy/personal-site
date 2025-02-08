@@ -5,7 +5,7 @@ function Sun() {
   const canvasRef = useRef(null);
   const [roughness, setRoughness] = useState(2);
 
-  // Oscillate roughness between 90 and 95 every 2 seconds
+  // Oscillate roughness between 2 and 3 every 2 seconds
   useEffect(() => {
     let current = 90;
     const intervalId = setInterval(() => {
@@ -32,7 +32,7 @@ function Sun() {
       fill: "yellow",
       stroke: "black",
       fillStyle: "hatchure",
-      fillWeight: 3.5,
+      fillWeight: 2.5,
       roughness: roughness,
     });
   }, [roughness]);
@@ -44,7 +44,7 @@ function Sun() {
         ref={canvasRef}
         width={200}
         height={200}
-        style={{ position: "absolute", top: 50, left: 50 }}
+        style={{ position: "absolute", top: 50, left: 50, zIndex: 2 }}
       />
 
       <img

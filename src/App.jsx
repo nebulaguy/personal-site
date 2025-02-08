@@ -9,6 +9,7 @@ import "./App.css";
 import Projects from "./Projects";
 import Typewriter from "./Typewriter";
 import Sun from "./Sun";
+import MovingClouds from "./MovingClouds";
 
 function Home({ musicOn, toggleMusic }) {
   const [activePopup, setActivePopup] = useState(null);
@@ -39,11 +40,13 @@ function Home({ musicOn, toggleMusic }) {
           justifyContent: "flex-end",
           alignItems: "center",
           padding: "0.5rem 1rem", // reduce horizontal padding from "2rem" to "1rem"
-          backgroundColor: "skyblue",
+
           zIndex: 999,
         }}
       >
         <Sun />
+        <MovingClouds />
+
         {/* Buttons on the right side */}
         <div style={{ display: "flex", gap: "1rem" }}>
           <wired-button
@@ -84,6 +87,7 @@ function Home({ musicOn, toggleMusic }) {
           maxWidth: "800px",
           width: "100%",
           color: "white",
+          zIndex: 3,
         }}
       >
         {/* Typed Name (smaller) */}
