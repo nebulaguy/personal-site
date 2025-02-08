@@ -1,17 +1,29 @@
 // MovingClouds.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Cloud from "./Cloud";
 
 function MovingClouds() {
   const [clouds, setClouds] = useState([]);
+  const intervalRef = useRef(null);
 
-  // Spawn a new cloud every ~3 seconds (adjust as you like)
   useEffect(() => {
-    const spawnInterval = setInterval(() => {
+    // Set a 1-second timeout for the first cloud
+    const firstTimeout = setTimeout(() => {
       setClouds((prev) => [...prev, generateCloud()]);
-    }, 10000);
 
-    return () => clearInterval(spawnInterval);
+      // After the first cloud, spawn more every 10 seconds
+      intervalRef.current = setInterval(() => {
+        setClouds((prev) => [...prev, generateCloud()]);
+      }, 10000);
+    }, 1);
+
+    // Cleanup: clear both the timeout and interval
+    return () => {
+      clearTimeout(firstTimeout);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, []);
 
   // Continuously update cloud positions
